@@ -1,7 +1,7 @@
 package util;
 
-// START:BatterCounter
-public class BatterCounter {
+// START:Batter
+public class Batter {
    private int strikes = 0;
 
    public void foul() {
@@ -17,4 +17,4 @@ public class BatterCounter {
       return strikes;
    }
 }
-// END:BatterCounter
+// END:Batter
