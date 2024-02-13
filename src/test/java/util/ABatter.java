@@ -21,7 +21,6 @@ class ABatter {
 
    @Nested
    class AFoulBall {
-
       // START:increment
       @Test
       void incrementsStrikesWhenLessThan2() {
