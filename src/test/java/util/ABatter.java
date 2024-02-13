@@ -23,7 +23,7 @@ class ABatter {
       }
       // END:strikeout
 
-      @Disabled
+      // START:walk
       @Test
       void whenWalked() {
          for (var i = 0; i < 4; i++)
@@ -31,6 +31,7 @@ class ABatter {
 
          assertTrue(batter.isDone());
       }
+      // END:walk
    }
 
    @Nested
