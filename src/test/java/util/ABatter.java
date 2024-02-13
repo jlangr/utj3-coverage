@@ -22,15 +22,6 @@ class ABatter {
          assertTrue(batter.isDone());
       }
       // END:strikeout
-
-      @Disabled
-      @Test
-      void whenWalked() {
-         for (var i = 0; i < 4; i++)
-            batter.ball();
-
-         assertTrue(batter.isDone());
-      }
    }
 
    @Nested
