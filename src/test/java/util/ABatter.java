@@ -1,13 +1,37 @@
 package util;
 
-// START:ABatter
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ABatter {
    Batter batter = new Batter();
+
+   @Nested
+   class IsDone {
+      // START:strikeout
+      @Test
+      void whenStruckOut() {
+         batter.strike();
+         batter.strike();
+         batter.strike();
+
+         assertTrue(batter.isDone());
+      }
+      // END:strikeout
+
+      @Disabled
+      @Test
+      void whenWalked() {
+         for (var i = 0; i < 4; i++)
+            batter.ball();
+
+         assertTrue(batter.isDone());
+      }
+   }
 
    @Nested
    class AStrike {
@@ -21,7 +45,6 @@ class ABatter {
 
    @Nested
    class AFoulBall {
-      // START:increment
       @Test
       void incrementsStrikesWhenLessThan2() {
          batter.strike();
@@ -30,9 +53,7 @@ class ABatter {
 
          assertEquals(2, batter.strikes());
       }
-      // END:increment
 
-      // START:noIncrement
       @Test
       void doesNotIncrementStrikesWhenAtTwo() {
          batter.strike();
@@ -42,7 +63,5 @@ class ABatter {
 
          assertEquals(2, batter.strikes());
       }
-      // END:noIncrement
    }
 }
-// END:ABatter
