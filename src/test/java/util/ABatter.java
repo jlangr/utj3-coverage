@@ -1,11 +1,9 @@
 package util;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ABatter {
    Batter batter = new Batter();
@@ -14,7 +12,7 @@ class ABatter {
    class IsDone {
       // START:strikeout
       @Test
-      void whenStruckOut() {
+      void passesWhenStruckOut() {
          batter.strike();
          batter.strike();
          batter.strike();
@@ -23,15 +21,20 @@ class ABatter {
       }
       // END:strikeout
 
-      // START:walk
+      // START:branchFull
       @Test
-      void whenWalked() {
+      void passesWhenWalked() {
          for (var i = 0; i < 4; i++)
             batter.ball();
 
          assertTrue(batter.isDone());
       }
-      // END:walk
+
+      @Test
+      void failsWhenNeitherWalkNorBall() {
+         assertFalse(batter.isDone());
+      }
+      // END:branchFull
    }
 
    @Nested
