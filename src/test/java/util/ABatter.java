@@ -19,9 +19,11 @@ class ABatter {
       }
    }
 
+   // START:increment
+   // START:noIncrement
    @Nested
    class AFoulBall {
-      // START:increment
+      // END:noIncrement
       @Test
       void incrementsStrikesWhenLessThan2() {
          batter.strike();
@@ -42,7 +44,9 @@ class ABatter {
 
          assertEquals(2, batter.strikes());
       }
-      // END:noIncrement
+      // START:increment
    }
+   // END:noIncrement
+   // END:increment
 }
 // END:ABatter
