@@ -6,17 +6,12 @@ public class Batter {
 
    // START:foul
    public void foul() {
-      if (strikes < 2)
-         strikes++;
+      if (strikes < 2) strikes++;
    }
    // END:foul
 
-   public void strike() {
-      strikes++;
-   }
+   public void strike() { strikes++; }
 
-   public int strikes() {
-      return strikes;
-   }
+   public int strikes() { return strikes; }
 }
 // END:Batter
